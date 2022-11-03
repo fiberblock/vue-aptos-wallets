@@ -1,6 +1,6 @@
-# Quick connect package for EVM
+# Quick connect package for aptos
 
-Vue Web3 wallets for integrating with EVM blockchain
+Vue aptos wallets for integrating with aptos blockchain
 
 ## Recommended IDE Setup
 
