@@ -3,16 +3,10 @@ import { computed, ref, watch } from "vue";
 import type {
   WalletAdapter,
   WalletName,
-  Wallet,
-  WalletError,
-  NetworkInfo
-} from "@pontem/aptos-wallet-adapter";
+  NetworkInfo,
+} from "../WalletAdapters/BaseAdapter";
 import {
   WalletReadyState,
-  WalletNotSelectedError,
-  WalletNotReadyError,
-} from "@pontem/aptos-wallet-adapter";
-import {
   AptosWalletAdapter,
   MartianWalletAdapter,
   PontemWalletAdapter,
@@ -25,7 +19,18 @@ import {
   BitkeepWalletAdapter,
   TokenPocketWalletAdapter,
   ONTOWalletAdapter,
-} from "@pontem/aptos-wallet-adapter";
+} from "../WalletAdapters";
+import type { WalletError } from "../WalletProviders";
+import {
+  WalletNotSelectedError,
+  WalletNotReadyError,
+} from "../WalletProviders";
+
+export interface Wallet {
+  adapter: WalletAdapter;
+  readyState: WalletReadyState;
+}
+
 interface UseWalletsProvider {
   wallets: WalletAdapter[];
   onError?: (error: WalletError) => void;
@@ -71,7 +76,7 @@ export const useWallets = () => {
     return error;
   };
   // function to connect adapter
-  const connect = async (toConnectWalletName: WalletName) => {
+  const connect = async (toConnectWalletName: string) => {
     // if (connecting.value || disconnecting.value || connected.value) return;
     const selectedWallet = wallets.value.find(
       (wAdapter) => wAdapter.adapter.name === toConnectWalletName
