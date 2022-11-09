@@ -1,6 +1,6 @@
 {
   "name": "vue-aptos-wallets",
-  "version": "1.0.4",
+  "version": "1.1.2",
   "description": "Wallet adapter with supporting Vue",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,12 +12,12 @@
     "aptos",
     "wallet adapter"
   ],
-  "author": "Dmitry Kuksenko <dmitriy.kuksenko@pontem.network>",
-  "repository": "https://github.com/pontem-network/wallet-adapter",
+  "author": "Fiberblock",
+  "repository": "https://github.com/fiberblock/vue-aptos-wallets",
   "bugs": {
-    "url": "https://github.com/pontem-network/wallet-adapter/issues"
+    "url": "https://github.com/fiberblock/vue-aptos-wallets/issues"
   },
-  "homepage": "https://github.com/pontem-network/wallet-adapter#readme",
+  "homepage": "https://github.com/fiberblock/vue-aptos-wallets#readme",
   "scripts": {
     "build": "rm -rf dist; tsc -p tsconfig.json"
   },
