@@ -1,0 +1,1 @@
+export { useWallets } from "./useVueWalletProvider";
